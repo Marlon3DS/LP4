@@ -5,17 +5,13 @@
 function loadMenu() {
     var pages = getPages();
     var menu = document.getElementById("navbar-pages");
-    var list = document.createElement("ul");
     pages.forEach((page) => {
-        var row = document.createElement("li");
-        var link = document.createElement("span");
+        var link = document.createElement("a");
         link.setAttribute("onclick", "redirectPage('" + page.path + "')");
-        link.setAttribute("class", getActivePage(page));
+        if (getActivePage(page)) link.setAttribute("class", "active-page");
         link.textContent = page.label;
-        row.appendChild(link);
-        list.appendChild(row);
+        menu.appendChild(link);
     });
-    menu.appendChild(list);
 }
 
 function getPages() {
@@ -33,8 +29,6 @@ function redirectPage(path) {
 function getActivePage(page) {
     var host = "/lp4";
     var pathName = window.location.pathname;
-    console.log(pathName);
-    console.log(host + page.path);
     if (pathName == host + page.path) {
         return "active-page";
     }
