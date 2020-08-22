@@ -51,7 +51,8 @@ function getPages() {
             title: "1ª Aula",
             subtitle: "Revisão de HTML e CSS",
             date: "20/08/2020",
-            resume: "Revisão de HTML e CSS",
+            resume:
+                "Revisão de HTML e CSS loren ipsum adoajdlndlasjnljn fljsnlanldfnalsndlanfljc adlcj adlncaldnalsdnlasn",
             path: "/Aula-1/",
         },
     ];
