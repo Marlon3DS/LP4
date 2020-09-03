@@ -5,7 +5,9 @@ var pages = getPages();
     var cards = document.getElementById("main-pages");
     pages.forEach((page) => {
         menu.appendChild(getMenuLink(page));
-        if (page.path != "/") cards.appendChild(getPageCard(page));
+        if (window.location.pathname == '/lp4/' && page.path != "/") {
+            cards.appendChild(getPageCard(page));
+        }
     });
 })();
 
@@ -45,15 +47,26 @@ function getPageCard(page) {
 }
 
 function getPages() {
-    return [
-        { title: "Home", subtitle: "", date: "", resume: "", path: "/" },
+    return [{
+            title: "Home",
+            subtitle: "",
+            date: "",
+            resume: "",
+            path: "/"
+        },
         {
             title: "1ª Aula",
             subtitle: "Revisão de HTML e CSS",
             date: "20/08/2020",
-            resume:
-                "Revisão de HTML e CSS loren ipsum adoajdlndlasjnljn fljsnlanldfnalsndlanfljc adlcj adlncaldnalsdnlasn",
+            resume: "Revisão de HTML e CSS loren ipsum adoajdlndlasjnljn fljsnlanldfnalsndlanfljc adlcj adlncaldnalsdnlasn",
             path: "/Aula-1/",
+        },
+        {
+            title: "2ª Aula",
+            subtitle: "Estilizando com Flex",
+            date: "27/08/2020",
+            resume: "Conhecendo estilização ",
+            path: "/Aula-2/",
         },
     ];
 }
